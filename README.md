@@ -15,3 +15,4 @@
     └─setup_game   #setup_game task， 用于部署游戏服， 
         ├─project
         └─roles    #ansible-playbook的roles
+        
