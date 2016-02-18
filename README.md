@@ -14,4 +14,4 @@
 └─tasks      #该目录下以目录存放着每个task。每个task是建立在ansible程序之上
     └─setup_game   #setup_game task， 用于部署游戏服， 
         ├─project
-        └─roles    #ansible-playbook的roles 
+        └─roles    #ansible-playbook的roles
