@@ -1,0 +1,25 @@
+CheckPartion: yes
+
+
+
+#设置内网ip的ip段,格式x.x.x.,注意定义的是网段
+ConfigIP: no
+local_network: 192.168.100.
+
+BIN_PATH: ebin
+
+ChangePass: no
+passwordroot: 'xxxx'
+
+ConfigFirewall: yes
+
+Db_moban: yes
+
+REAL_NAME: txshujian
+
+
+#设置 zabbix
+Project_name: "shujian_tengxun"
+Proxy_Passive: "110.251.82.243"
+Proxy_Active: "110.251.82.243"
+

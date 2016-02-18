@@ -1,0 +1,24 @@
+CheckPartion: yes
+
+
+#设置内网ip的ip段,格式x.x.x.,注意定义的是网段
+ConfigIP: no
+local_network: 192.168.100.
+
+BIN_PATH: bin
+
+ChangePass: no
+passwordroot: 'xxxx'
+
+ConfigFirewall: yes
+
+Db_moban: no
+
+REAL_NAME: ytios
+reportUrl: 'yxzg-1235121013.eu-west-1.elb.amazonaws.com/battle.php'
+
+#设置 zabbix
+Project_name: "gnytsy"
+Proxy_Passive: "110.232.60.124"
+Proxy_Active: "110.232.60.124"
+

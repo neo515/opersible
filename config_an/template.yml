@@ -1,0 +1,37 @@
+#是否检查data分区挂载, 针对腾讯云服务器
+CheckPartion: no
+
+
+#设置内网ip的ip段,格式x.x.x.,注意定义的是网段
+ConfigIP: no
+local_network: 192.168.100.
+
+#bin ebin
+BIN_PATH: bin
+
+#是否更改root密码
+ChangePass: no
+passwordroot: 'xxxx'
+
+ConfigFirewall: yes
+
+#搭服是否需要导入数据库模板, 一般不用更新数据库的项目这里为no
+Db_moban: no
+
+#游戏后端目录前缀  即/data/gameserver/xxxx_9999/
+REAL_NAME: yxzg
+
+#战报地址,战歌才需要
+reportUrl: 'http://myth-de-web.r2games.com/battle.php'
+
+#Zabbix 设置
+Project_name: "yxzg_R2de"   # 新项目的话设定为 GAME_NAME_PLATFORM, 老项目不必更改
+Proxy_Passive: "192.168.22.250"   管理机ip
+Proxy_Active: "192.168.22.250"    管理机ip
+
+
+#战报信息, 战歌才要设定
+zhengbainfo:
+  '+1': {zhengbaServerIp: 192.168.20.198, zhengbaVideoIp: London.zsxy.myth.r2games.com }
+
+

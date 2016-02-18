@@ -1,0 +1,30 @@
+- hosts: do_moban
+  vars_files:
+  - "../../game.yml"   #游戏名、平台
+  - "../../config_an/{{GAME_NAME}}_{{PLATFORM}}.yml"  #site.yml用的开关、REAL_NAME
+  - "../../config_an/common.yml"   #软件包路径等
+
+  # tasks:
+  #  - debug: msg={{ansible_ssh_host}}
+
+
+
+  roles:
+  - 1_tar_backend
+  - 2_rename
+
+
+- hosts: setup_game
+  vars_files:
+  - "../../game.yml"   #游戏名、平台
+  - "../../config_an/{{GAME_NAME}}_{{PLATFORM}}.yml"  #site.yml用的开关、REAL_NAME
+  - "../../config_an/common.yml"   #软件包路径等
+
+  # tasks:
+  # - debug: msg="{{num}}={{ansible_ssh_host}} ={{javaip}}={{javaname}}={{dbip}} ; {{dbport}}={{ dbname}}={{platforms}}={{hefunums}}={{opentime}}={{socketport}}"
+  # - debug: msg={{ansible_ssh_host}}
+
+  roles:
+  - 5_setup_db
+  - 3_setup
+  - 4_checkout

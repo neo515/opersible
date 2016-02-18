@@ -1,0 +1,37 @@
+BACKEND_UP: '{{REAL_NAME}}_up.tar.gz'
+# BACKEND_UP_PATH: '/data/htdocs/www/resource/houduan/{{BACKEND_UP}}'
+BACKEND_UP_PATH: '/data/work/tasks/moban/houduan/{{BACKEND_UP}}'
+
+BACKEND: '{{REAL_NAME}}.tar.gz'
+# BACKEND_PATH: '/data/htdocs/www/resource/houduan/{{BACKEND}}'
+BACKEND_PATH: '/data/work/tasks/moban/houduan/{{BACKEND}}'
+
+
+# DB_MoBan_PATH: "/data/shell/setup_gamedb/{{REAL_NAME}}_mb.sql"
+DB_MoBan_PATH: "{{REAL_NAME}}_mb.sql"
+
+
+#定义放置脚本或rpm包等的路径
+pub_path: '/data/work/software'
+
+#脚本的路径
+cutlog_sh_path: '{{pub_path}}/cutlog.sh'
+check_clean_mysql_disk_sh_path: '{{pub_path}}/check_clean_mysql_disk.sh'
+
+#rpm包名,不包含'.rpm'
+jdk_rpm: jdk-1.7.0-1.x86_64
+nginx_rpm: nginx-1.4.4-1.x86_64
+php_rpm: php-5.3.10-1.x86_64
+mysql_rpm: mysql-5.5.24-1.x86_64
+
+erlang_rpm: erlang-5.10.4-1.x86_64
+
+#rpm的路径. mysql、erlang可能未统一.根据实际情况填写
+jdk_rpm_path: '{{pub_path}}/{{ansible_distribution}}/{{jdk_rpm}}.rpm'
+nginx_rpm_path: '{{pub_path}}/{{ansible_distribution}}/{{nginx_rpm}}.rpm'
+php_rpm_path: '{{pub_path}}/{{ansible_distribution}}/{{php_rpm}}.rpm'
+mysql_rpm_path: '{{pub_path}}/{{ansible_distribution}}/{{mysql_rpm}}.rpm'
+erlang_rpm_path: '{{pub_path}}/{{ansible_distribution}}/{{erlang_rpm}}.rpm'
+
+path_843: '{{pub_path}}/843.tar.gz'
+

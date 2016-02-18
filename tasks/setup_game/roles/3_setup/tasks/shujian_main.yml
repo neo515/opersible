@@ -1,0 +1,27 @@
+- shell: test -e /data/gameserver/{{REAL_NAME}}_{{num}} && rm -rf /data/gameserver/{{REAL_NAME}}_{{num}}; mkdir -p /data/gameserver/{{REAL_NAME}}_{{num}}
+- copy: src={{BACKEND_PATH}} dest=/data/gameserver/{{REAL_NAME}}_{{num}}/{{BACKEND}} force=yes
+- shell: tar zxf {{BACKEND}} --touch chdir=/data/gameserver/{{REAL_NAME}}_{{num}}
+- shell: rm -f {{BACKEND}} chdir=/data/gameserver/{{REAL_NAME}}_{{num}}
+
+
+- shell: mkdir -p logs chdir=/data/gameserver/{{REAL_NAME}}_{{num}}
+
+- shell: grep {{javaip}} /etc/hosts|| echo {{javaip}}  {{javaname}} >>/etc/hosts
+
+- shell: sed -i "/db_host/c \{db\_host\, \"{{dbip}}\"\}\," config/gs.config chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+- shell: sed -i "/db_port/c \{db\_port\, {{dbport}}\}\," config/gs.config chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+- shell: sed -i "/db_name/c \{db\_name\, \"{{dbname}}\"\}\," config/gs.config chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+- shell: sed -i "/server_num/c \{server\_num\, {{num}}\}\," config/gs.config chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+- shell: sed -i "/platform/c \{platform\, \"{{platforms}}\"\}\," config/gs.config chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+
+- shell: sed -i "/card_server/c \{card\_server\, \[{{hefunums}}\]\}" config/gs.config chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+
+- shell: sed -i "/^SERVER_NUM=/c SERVER_NUM={{num}}"  config/head.sh chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+- shell: sed -i "/^DOMAIN=/c DOMAIN=\"{{javaname}}\""  config/head.sh chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+- shell: sed -i "/^gameip=/c gameip=\"{{javaip}}\""  config/head.sh chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+
+
+- shell: sed -i "/^COMMON_PORT_START_10=/c COMMON_PORT_START_10={{socketport}}" config/head.sh chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+- shell: sed -i "/^COMMON_PORT_START_1=/c COMMON_PORT_START_1={{socketport|int +1 }}" config/head.sh chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+- shell: sed -i "/^COMMON_PORT_START_0=/c COMMON_PORT_START_0={{socketport|int - 2000}}" config/head.sh chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
+- shell: echo "{{opentime}}" > config/open_time.config chdir=/data/gameserver/{{REAL_NAME}}_{{num}}/server
