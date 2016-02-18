@@ -12,12 +12,18 @@
 
 实现了： 操作一些游戏服/区，只需要填入区号，接着执行python run.py即可，简化了运维的工作。
 
-operansible/
 ├─config     #该系统需要用到的一些配置，如cmdb连接信息等
+
 ├─config_an  #ansible程序使用到的一些配置文件
+
 ├─lib        #库：读取cmdb 、 调用ansible api
+
 ├─logs
+
 └─tasks      #该目录下以目录存放着每个task。每个task是建立在ansible程序之上
+
     └─setup_game   #setup_game task， 用于部署游戏服， 
+    
         ├─project
+        
         └─roles    #ansible-playbook的roles
