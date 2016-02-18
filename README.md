@@ -12,7 +12,7 @@
 
 实现了： 操作一些游戏服/区，只需要填入区号，接着执行python run.py即可，简化了运维的工作。
 
-
+operansible/
 ├─config     #该系统需要用到的一些配置，如cmdb连接信息等
 ├─config_an  #ansible程序使用到的一些配置文件
 ├─lib        #库：读取cmdb 、 调用ansible api
