@@ -1,3 +1,6 @@
+# operansible
+利用ansible结合cmdb开发的运维自动化系统
+
 本系统用于运维维护更新公司所有项目/平台的游戏。
 本系统更像是一个框架；对应不同的游戏，只需要添加相应的配置或代码即可。
 底层使用了游戏对应的cmdb系统。
@@ -11,6 +14,4 @@
 └─tasks      #该目录下以目录存放着每个task。每个task是建立在ansible程序之上
     └─setup_game   #setup_game task， 用于部署游戏服， 
         ├─project
-        └─roles
-            └─3_setup
-                └─tasks
+        └─roles    #ansible-playbook的roles
