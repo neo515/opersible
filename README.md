@@ -1,4 +1,4 @@
-# operansible
+# opersible
 利用ansible结合cmdb开发的运维自动化系统
 
 本系统用于运维维护更新公司所有项目/平台的游戏。
