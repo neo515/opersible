@@ -16,3 +16,8 @@ def nowtime():
 
 def nowtime_int():
     return time.time()
+
+if __name__ == '__main__':
+    with _tee('/tmp/test.txt','a+') as f:
+        f.write('something .... ')
+        f._write('something else ... ')
