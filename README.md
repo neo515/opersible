@@ -1,4 +1,4 @@
-# opersible
+##### opersible
 利用ansible结合cmdb开发的运维自动化系统
 
 本系统用于运维维护更新公司所有项目/平台的游戏。
@@ -7,7 +7,7 @@
 
 实现了： 操作一些游戏服/区，只需要填入区号，接着执行python run.py即可，简化了运维的工作。
 
-
+```
 ├─config     #该系统需要用到的一些配置，如cmdb连接信息等
 
 ├─config_an  #ansible程序使用到的一些配置文件
@@ -23,4 +23,4 @@
         ├─project
         
         └─roles    #ansible-playbook的roles
-        
+````        
