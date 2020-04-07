@@ -49,6 +49,8 @@ php后台 ---> mysql <--- opersible ---> playbook
      └─setup_game   *#setup_game task， 用于部署游戏服，*
          ├─project
          └─roles    *#ansible-playbook的roles*
+
+# ** ps: tasks目录下本身是有很多个task的,现在进行了隐去. **
 ```
 
 #### 使用
